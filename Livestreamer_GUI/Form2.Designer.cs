@@ -1,6 +1,6 @@
 ﻿namespace Livestreamer_GUI
 {
-    partial class Einstellungen
+    partial class Settings
     {
         /// <summary>
         /// Required designer variable.

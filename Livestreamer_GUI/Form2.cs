@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Livestreamer_GUI
 {
-    public partial class Einstellungen : Form
+    public partial class Settings : Form
     {
         
-        public Einstellungen()
+        public Settings()
         {
             InitializeComponent();
         }

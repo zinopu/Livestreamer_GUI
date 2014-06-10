@@ -12,7 +12,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Collections.Specialized;
 
-// SETTINGS PART ON THE MENUE IS SET TO INVISIBLE ||| EDIT THE FORM1.cs
+// SETTINGS_BAR ON THE MENUE IS SET TO INVISIBLE ||| EDIT THE FORM1.cs WITH THE SCHEME EDITOR
  
 namespace Livestreamer_GUI
 {
@@ -40,7 +40,7 @@ namespace Livestreamer_GUI
 
         private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Einstellungen einstellungen_1 = new Einstellungen();
+            Settings einstellungen_1 = new Settings();
             einstellungen_1.ShowDialog();
         }
 
