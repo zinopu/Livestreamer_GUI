@@ -12,13 +12,13 @@ using System.IO;
 using System.Diagnostics;
 using System.Collections.Specialized;
 
-
+// SETTINGS PART ON THE MENUE IS SET TO INVISIBLE ||| EDIT THE FORM1.cs
+ 
 namespace Livestreamer_GUI
 {
     public partial class Livestreamer_GUI : Form
     {
-        public string pfad_mediaplayer = "hallo";
-        //public string pfad_mediaplayer { get; set; }
+        public string pfad_mediaplayer = "";        
 
         public Livestreamer_GUI()
         {
@@ -46,7 +46,6 @@ namespace Livestreamer_GUI
 
         private void but_start_Click(object sender, EventArgs e)
         {
-            //string a;
             Process p = new Process();
             p.StartInfo.FileName = "livestreamer.exe";
             p.StartInfo.Arguments = txt_twitchURL.Text + " " + dropdown_quality.SelectedItem + " --player " + txt_pfad_mediaplayer.Text;
@@ -55,8 +54,6 @@ namespace Livestreamer_GUI
             Properties.Settings.Default.quality = dropdown_quality.SelectedIndex;
             Properties.Settings.Default.Save();
             p.Start();       
-
-            //MessageBox.Show(a);
         }
 
         private void txt_twitchURL_TextChanged(object sender, EventArgs e)
@@ -71,8 +68,8 @@ namespace Livestreamer_GUI
 
             ofd.Multiselect = false;
             ofd.InitialDirectory = "C:\"";
-            ofd.Filter = "ausf. Datei (*.exe)|*.exe";
-            ofd.Title = "Datei zum Öffnen auswählen";
+            ofd.Filter = ".exe (*.exe)|*.exe";
+            ofd.Title = "Choose file to open";
             ofd.RestoreDirectory = true;
             if (ofd.ShowDialog() == DialogResult.OK)
             {

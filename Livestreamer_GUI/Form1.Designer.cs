@@ -41,6 +41,7 @@
             this.txt_pfad_mediaplayer = new System.Windows.Forms.TextBox();
             this.dropdown_quality = new System.Windows.Forms.ComboBox();
             this.but_mediaplayer = new System.Windows.Forms.Button();
+            this.lbl_quality = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,13 +61,13 @@
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
-            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
-            this.dateiToolStripMenuItem.Text = "Datei";
+            this.dateiToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.dateiToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -75,15 +76,15 @@
             this.bearbeitungToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.einstellungenToolStripMenuItem});
             this.bearbeitungToolStripMenuItem.Name = "bearbeitungToolStripMenuItem";
-            this.bearbeitungToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
-            this.bearbeitungToolStripMenuItem.Text = "Bearbeitung";
+            this.bearbeitungToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.bearbeitungToolStripMenuItem.Text = "Edit";
             this.bearbeitungToolStripMenuItem.Visible = false;
             // 
             // einstellungenToolStripMenuItem
             // 
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
             this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.einstellungenToolStripMenuItem.Text = "Einstellungen";
+            this.einstellungenToolStripMenuItem.Text = "Settings";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
             // lbl_twitchTV
@@ -91,9 +92,9 @@
             this.lbl_twitchTV.AutoSize = true;
             this.lbl_twitchTV.Location = new System.Drawing.Point(45, 45);
             this.lbl_twitchTV.Name = "lbl_twitchTV";
-            this.lbl_twitchTV.Size = new System.Drawing.Size(56, 13);
+            this.lbl_twitchTV.Size = new System.Drawing.Size(67, 13);
             this.lbl_twitchTV.TabIndex = 1;
-            this.lbl_twitchTV.Text = "Twitch.TV";
+            this.lbl_twitchTV.Text = "Twitch.tv Url";
             // 
             // but_start
             // 
@@ -116,11 +117,11 @@
             // lbl_pfad_mediaplayer
             // 
             this.lbl_pfad_mediaplayer.AutoSize = true;
-            this.lbl_pfad_mediaplayer.Location = new System.Drawing.Point(48, 88);
+            this.lbl_pfad_mediaplayer.Location = new System.Drawing.Point(45, 89);
             this.lbl_pfad_mediaplayer.Name = "lbl_pfad_mediaplayer";
-            this.lbl_pfad_mediaplayer.Size = new System.Drawing.Size(111, 13);
+            this.lbl_pfad_mediaplayer.Size = new System.Drawing.Size(97, 13);
             this.lbl_pfad_mediaplayer.TabIndex = 4;
-            this.lbl_pfad_mediaplayer.Text = "Pfad zum Mediaplayer";
+            this.lbl_pfad_mediaplayer.Text = "Select Mediaplayer";
             // 
             // txt_pfad_mediaplayer
             // 
@@ -143,7 +144,7 @@
             "Mobile",
             "Best",
             "Low"});
-            this.dropdown_quality.Location = new System.Drawing.Point(48, 131);
+            this.dropdown_quality.Location = new System.Drawing.Point(48, 149);
             this.dropdown_quality.Name = "dropdown_quality";
             this.dropdown_quality.Size = new System.Drawing.Size(80, 21);
             this.dropdown_quality.TabIndex = 6;
@@ -158,12 +159,22 @@
             this.but_mediaplayer.UseVisualStyleBackColor = true;
             this.but_mediaplayer.Click += new System.EventHandler(this.but_mediaplayer_Click);
             // 
+            // lbl_quality
+            // 
+            this.lbl_quality.AutoSize = true;
+            this.lbl_quality.Location = new System.Drawing.Point(45, 133);
+            this.lbl_quality.Name = "lbl_quality";
+            this.lbl_quality.Size = new System.Drawing.Size(70, 13);
+            this.lbl_quality.TabIndex = 8;
+            this.lbl_quality.Text = "Streamquality";
+            // 
             // Livestreamer_GUI
             // 
             this.AcceptButton = this.but_start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 228);
+            this.Controls.Add(this.lbl_quality);
             this.Controls.Add(this.but_mediaplayer);
             this.Controls.Add(this.dropdown_quality);
             this.Controls.Add(this.txt_pfad_mediaplayer);
@@ -200,6 +211,7 @@
         private System.Windows.Forms.TextBox txt_pfad_mediaplayer;
         private System.Windows.Forms.ComboBox dropdown_quality;
         private System.Windows.Forms.Button but_mediaplayer;
+        private System.Windows.Forms.Label lbl_quality;
     }
 }
 
