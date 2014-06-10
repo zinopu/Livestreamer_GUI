@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Livestreamer_GUI.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="stream" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://www.twitch.tv/STREAMER</Value>
+    </Setting>
+    <Setting Name="quality" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5</Value>
+    </Setting>
+    <Setting Name="player" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files (x86)\VideoLAN\VLC</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
