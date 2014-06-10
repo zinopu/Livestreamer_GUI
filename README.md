@@ -2,6 +2,7 @@ Livestreamer_GUI
 ================
 
 Livestreamer GUI for the cli program called livestreamer(Twitch)
+
 Written in C#
 
 HOW TO USE:
