@@ -36,12 +36,12 @@
             this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbl_twitchTV = new System.Windows.Forms.Label();
             this.but_start = new System.Windows.Forms.Button();
-            this.txt_twitchURL = new System.Windows.Forms.TextBox();
             this.lbl_pfad_mediaplayer = new System.Windows.Forms.Label();
             this.txt_pfad_mediaplayer = new System.Windows.Forms.TextBox();
             this.dropdown_quality = new System.Windows.Forms.ComboBox();
             this.but_mediaplayer = new System.Windows.Forms.Button();
             this.lbl_quality = new System.Windows.Forms.Label();
+            this.txt_twitchURL = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -83,7 +83,7 @@
             // einstellungenToolStripMenuItem
             // 
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.einstellungenToolStripMenuItem.Text = "Settings";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
@@ -105,14 +105,6 @@
             this.but_start.Text = "Start";
             this.but_start.UseVisualStyleBackColor = true;
             this.but_start.Click += new System.EventHandler(this.but_start_Click);
-            // 
-            // txt_twitchURL
-            // 
-            this.txt_twitchURL.Location = new System.Drawing.Point(48, 61);
-            this.txt_twitchURL.Name = "txt_twitchURL";
-            this.txt_twitchURL.Size = new System.Drawing.Size(350, 20);
-            this.txt_twitchURL.TabIndex = 3;
-            this.txt_twitchURL.TextChanged += new System.EventHandler(this.txt_twitchURL_TextChanged);
             // 
             // lbl_pfad_mediaplayer
             // 
@@ -168,18 +160,27 @@
             this.lbl_quality.TabIndex = 8;
             this.lbl_quality.Text = "Streamquality";
             // 
+            // txt_twitchURL
+            // 
+            this.txt_twitchURL.FormattingEnabled = true;
+            this.txt_twitchURL.Location = new System.Drawing.Point(48, 61);
+            this.txt_twitchURL.Name = "txt_twitchURL";
+            this.txt_twitchURL.Size = new System.Drawing.Size(350, 21);
+            this.txt_twitchURL.TabIndex = 9;
+            this.txt_twitchURL.SelectedIndexChanged += new System.EventHandler(this.txt_twitchURL_SelectedIndexChanged);
+            // 
             // Livestreamer_GUI
             // 
             this.AcceptButton = this.but_start;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 228);
+            this.Controls.Add(this.txt_twitchURL);
             this.Controls.Add(this.lbl_quality);
             this.Controls.Add(this.but_mediaplayer);
             this.Controls.Add(this.dropdown_quality);
             this.Controls.Add(this.txt_pfad_mediaplayer);
             this.Controls.Add(this.lbl_pfad_mediaplayer);
-            this.Controls.Add(this.txt_twitchURL);
             this.Controls.Add(this.but_start);
             this.Controls.Add(this.lbl_twitchTV);
             this.Controls.Add(this.menuStrip1);
@@ -206,12 +207,12 @@
         private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem;
         private System.Windows.Forms.Label lbl_twitchTV;
         private System.Windows.Forms.Button but_start;
-        private System.Windows.Forms.TextBox txt_twitchURL;
         private System.Windows.Forms.Label lbl_pfad_mediaplayer;
         private System.Windows.Forms.TextBox txt_pfad_mediaplayer;
         private System.Windows.Forms.ComboBox dropdown_quality;
         private System.Windows.Forms.Button but_mediaplayer;
         private System.Windows.Forms.Label lbl_quality;
+        private System.Windows.Forms.ComboBox txt_twitchURL;
     }
 }
 
