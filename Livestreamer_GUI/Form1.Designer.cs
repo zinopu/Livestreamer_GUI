@@ -168,6 +168,7 @@
             this.txt_twitchURL.Size = new System.Drawing.Size(350, 21);
             this.txt_twitchURL.TabIndex = 9;
             this.txt_twitchURL.SelectedIndexChanged += new System.EventHandler(this.txt_twitchURL_SelectedIndexChanged);
+            this.txt_twitchURL.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_twitchURL_KeyDown);
             // 
             // Livestreamer_GUI
             // 

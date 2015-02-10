@@ -43,8 +43,31 @@ namespace Livestreamer_GUI
 
         private void txt_twitchURL_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.stream = txt_twitchURL.Text;
-            Properties.Settings.Default.Save();
+           // Properties.Settings.Default.stream = txt_twitchURL.Text;
+           // Properties.Settings.Default.Save();
+        }
+
+        private void txt_twitchURL_KeyDown(object sender, KeyEventArgs e)
+        {
+            // HINT VAR
+            string txt_from_selcted_item = "";
+
+            if (e.KeyCode == Keys.Delete)
+            {
+                txt_from_selcted_item = txt_twitchURL.GetItemText(txt_twitchURL.SelectedItem);
+                if (txt_twitchURL.SelectedIndex != -1)
+                {
+                    txt_twitchURL.Items.Remove(txt_twitchURL.SelectedItem);
+                    Properties.Settings.Default.URL_list.Remove(txt_from_selcted_item);
+                    Properties.Settings.Default.Save();
+                    // Exception if all entrys got deleted, Add a empty one.
+                    if (txt_twitchURL.Items.Count == 0)
+                    {
+                        Properties.Settings.Default.URL_list.Insert(0, "");
+                        txt_twitchURL.Items.Insert(0, "");
+                    }
+                }
+            }
         }
 
         private void txt_pfad_mediaplayer_TextChanged(object sender, EventArgs e)
@@ -80,10 +103,26 @@ namespace Livestreamer_GUI
             Properties.Settings.Default.player = txt_pfad_mediaplayer.Text;
             Properties.Settings.Default.quality = dropdown_quality.SelectedIndex;
             //No multiple Streams in Dropdown-Box (bool)
-            if ( (Properties.Settings.Default.URL_list.Contains(txt_twitchURL.Text)) == false )
+            if (Properties.Settings.Default.URL_list.Contains(txt_twitchURL.Text) == false)
             {
-                Properties.Settings.Default.URL_list.Add(txt_twitchURL.Text);
+                if (Properties.Settings.Default.URL_list.Count <= txt_twitchURL.MaxDropDownItems)
+                {
+                    Properties.Settings.Default.URL_list.Insert(0, txt_twitchURL.Text);
+                }
+                else
+                {
+                    Properties.Settings.Default.URL_list.RemoveAt(txt_twitchURL.MaxDropDownItems);
+                    Properties.Settings.Default.URL_list.Insert(0, txt_twitchURL.Text);
+                }
             }
+            else
+            {   
+                Properties.Settings.Default.URL_list.Remove(txt_twitchURL.Text);
+                Properties.Settings.Default.URL_list.Insert(0, txt_twitchURL.Text);
+            }
+
+           // txt_pfad_mediaplayer.Text = Convert.ToString(txt_twitchURL.SelectedIndex);
+           // txt_pfad_mediaplayer.Text = Convert.ToString(Properties.Settings.Default.URL_list.Count);
 
             Properties.Settings.Default.Save();
             p.Start();       
@@ -94,6 +133,6 @@ namespace Livestreamer_GUI
             Close();
         }
 
-
+        
     }
 }
