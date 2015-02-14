@@ -59,13 +59,18 @@ namespace Livestreamer_GUI
                 {
                     txt_twitchURL.Items.Remove(txt_twitchURL.SelectedItem);
                     Properties.Settings.Default.URL_list.Remove(txt_from_selcted_item);
-                    Properties.Settings.Default.Save();
+                    
                     // Exception if all entrys got deleted, Add a empty one.
                     if (txt_twitchURL.Items.Count == 0)
                     {
                         Properties.Settings.Default.URL_list.Insert(0, "");
                         txt_twitchURL.Items.Insert(0, "");
                     }
+                    Properties.Settings.Default.Save();
+                    //Reload Dropdownlist
+                    txt_twitchURL.Items.Clear();
+                    foreach (string i in Properties.Settings.Default.URL_list)
+                        txt_twitchURL.Items.Add(i);
                 }
             }
         }
@@ -120,12 +125,18 @@ namespace Livestreamer_GUI
                 Properties.Settings.Default.URL_list.Remove(txt_twitchURL.Text);
                 Properties.Settings.Default.URL_list.Insert(0, txt_twitchURL.Text);
             }
-
+           // Test
            // txt_pfad_mediaplayer.Text = Convert.ToString(txt_twitchURL.SelectedIndex);
            // txt_pfad_mediaplayer.Text = Convert.ToString(Properties.Settings.Default.URL_list.Count);
 
             Properties.Settings.Default.Save();
-            p.Start();       
+            p.Start();
+
+            // Refresh Dropdownlist
+            txt_twitchURL.Items.Clear();
+            foreach (string i in Properties.Settings.Default.URL_list)
+                txt_twitchURL.Items.Add(i);
+
         }
         
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)

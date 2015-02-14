@@ -164,6 +164,7 @@
             // 
             this.txt_twitchURL.FormattingEnabled = true;
             this.txt_twitchURL.Location = new System.Drawing.Point(48, 61);
+            this.txt_twitchURL.MaxDropDownItems = 7;
             this.txt_twitchURL.Name = "txt_twitchURL";
             this.txt_twitchURL.Size = new System.Drawing.Size(350, 21);
             this.txt_twitchURL.TabIndex = 9;
